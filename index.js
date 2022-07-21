@@ -2,6 +2,7 @@ const express=require("express")
 require("./database/database")
 const Uploads=require("./model/schema")
 const app = express();
+const port=process.env.PORT || 5000
 
 var cors = require('cors');
 app.use(cors());
@@ -36,4 +37,4 @@ app.post("/FormDetails",async(req,res)=>{
             status:"post created",
             data:upload_data        })
 })
-app.listen(5000,()=>{console.log("server connected "+5000)})
+app.listen(port,()=>{console.log("server connected "+port)})
